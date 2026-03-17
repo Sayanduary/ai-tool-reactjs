@@ -1,0 +1,141 @@
+/**
+ * macOS Tahoe Inspired Glass Theme (No Shadow)
+ */
+
+/* ---------------- Colors ---------------- */
+
+@define-color bg_color rgba(40, 40, 40, 0.90);
+@define-color window_bg @bg_color;
+@define-color window_border_color rgba(255,255,255,0.15);
+@define-color prefs_background rgba(255,255,255,0.08);
+
+/* Input */
+@define-color selected_bg_color #ffffff;
+@define-color selected_fg_color #000000;
+@define-color input_color #ffffff;
+@define-color caret_color #ffffff;
+
+/* Result items */
+@define-color item_name #ffffff;
+@define-color item_text rgba(255,255,255,0.65);
+@define-color item_box_selected rgba(255,255,255,0.08);
+@define-color item_text_selected rgba(255,255,255,0.85);
+@define-color item_name_selected #ffffff;
+
+@define-color item_shortcut_color rgba(255,255,255,0.45);
+@define-color item_shortcut_color_sel rgba(255,255,255,0.75);
+
+@define-color item_shortcut_shadow rgba(0,0,0,0);
+@define-color item_shortcut_shadow_sel rgba(0,0,0,0);
+
+/* ---------------- App Window ---------------- */
+
+.app {
+
+  margin: -20px;
+
+  /* Frosted glass */
+  background-color: rgba(30,30,30,0.35);
+
+  border-radius: 36px;
+
+  border: 1px solid rgba(255,255,255,0.15);
+
+  /* removed shadow */
+  box-shadow: none;
+
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+/* ---------------- Input ---------------- */
+
+.input {
+  color: @input_color;
+  font-weight: 500;
+}
+
+/* Selected text */
+
+.input *:selected,
+.input *:focus,
+*:selected:focus {
+  background-color: alpha(@selected_bg_color, 0.85);
+  color: @selected_fg_color;
+}
+
+/* ---------------- Item Text ---------------- */
+
+.item-text {
+  margin: 0px 8px;
+  color: @item_text;
+}
+
+.item-name {
+  margin: 0px 8px;
+  color: @item_name;
+}
+
+/* ---------------- Selected Item ---------------- */
+
+.selected.item-box {
+
+  margin: -20px;
+
+  background-color: rgba(255,255,255,0.08);
+
+  border-radius: 30px;
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  /* removed shadow */
+  box-shadow: none;
+}
+
+.selected.item-box .item-text {
+  color: @item_text_selected;
+}
+
+.selected.item-box .item-name {
+  color: @item_name_selected;
+}
+
+/* ---------------- Shortcuts ---------------- */
+
+.item-shortcut {
+  color: @item_shortcut_color;
+}
+
+.selected.item-box .item-shortcut {
+  color: @item_shortcut_color_sel;
+}
+
+/* ---------------- Preferences Button ---------------- */
+
+.prefs-btn {
+
+  background-color: rgba(255,255,255,0.06);
+
+  border-radius: 50px;
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  box-shadow: none;
+}
+
+.prefs-btn * {
+  box-shadow: none;
+}
+
+.prefs-btn:hover {
+
+  background-color: rgba(255,255,255,0.15);
+
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ---------------- Remove window shadow ---------------- */
+
+.no-window-shadow {
+  margin: -20px;
+}

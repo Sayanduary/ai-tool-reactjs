@@ -32,8 +32,6 @@ export default function App() {
 
       const data = await response.json();
 
-      console.log(data);
-
       if (data.candidates) {
         console.log(data.candidates[0].content.parts[0].text);
         setResult(data.candidates[0].content.parts[0].text);
