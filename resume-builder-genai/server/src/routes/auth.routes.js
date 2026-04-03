@@ -1,5 +1,10 @@
 import { Router } from "express";
-import authController from "../controllers/auth.controller.js";
+import {
+    getMeController,
+    loginUserController,
+    logoutUserController,
+    registerUserController,
+} from "../controllers/auth.controller.js";
 import authUser from "../middlewares/auth.middleware.js";
 
 const authRouter = Router();
@@ -13,7 +18,7 @@ const authRouter = Router();
  * @controller registerUserController
  * -------------------------------------------------------------
  */
-authRouter.post("/register", authController.registerUserController);
+authRouter.post("/register", registerUserController);
 
 /**
  * -------------------------------------------------------------
@@ -24,7 +29,7 @@ authRouter.post("/register", authController.registerUserController);
  * @controller loginUserController
  * -------------------------------------------------------------
  */
-authRouter.post("/login", authController.loginUserController);
+authRouter.post("/login", loginUserController);
 
 /**
  * -------------------------------------------------------------
@@ -35,7 +40,7 @@ authRouter.post("/login", authController.loginUserController);
  * @controller logoutUserController
  * -------------------------------------------------------------
  */
-authRouter.post("/logout", authController.logoutUserController);
+authRouter.post("/logout", logoutUserController);
 
 /**
  * -------------------------------------------------------------
@@ -46,6 +51,6 @@ authRouter.post("/logout", authController.logoutUserController);
  * @controller getMeController
  * -------------------------------------------------------------
  */
-authRouter.get("/get-me", authUser, authController.getMeController);
+authRouter.get("/get-me", authUser, getMeController);
 
 export default authRouter;
